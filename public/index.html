@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071011" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%23d8ff3e'/%3E%3Cpath d='M43 14H24C14 14 9 20 9 29c0 8 5 12 14 14l8 2c4 1 5 2 5 4s-2 3-5 3H11v-9h19l-8-2C12 39 7 35 7 27 7 18 13 12 23 12h20z' fill='%23071011'/%3E%3C/svg%3E" />
+  <title>STRIKER // ARENA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="pitch"></canvas>
+    <div class="grain"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Striker Arena home"><span class="brand-mark">S</span><span>STRIKER<span class="brand-dim"> / ARENA</span></span></a>
+      <div class="match-status"><i id="status-dot"></i><span id="status-label">CONNECTING TO ARENA</span></div>
+      <div class="top-right"><span class="season-tag">SEASON 01 <b>·</b> BLUE LOCK</span><button class="icon-button" id="sound-toggle" title="Toggle sound">♫</button></div>
+    </header>
+
+    <section class="scoreboard" aria-label="Match score">
+      <div class="score-team red-team"><span class="team-dot"></span>RED</div>
+      <div class="score-numbers"><span id="red-score">00</span><i>:</i><span id="blue-score">00</span></div>
+      <div class="score-team blue-team">BLUE<span class="team-dot"></span></div>
+      <div class="match-clock" id="match-clock">00:00 <span>EXHIBITION</span></div>
+    </section>
+
+    <aside class="left-panel glass">
+      <div class="eyebrow"><span class="eyebrow-line"></span> PLAYER PROFILE</div>
+      <div class="profile-row"><div class="avatar">狼<span class="avatar-level">01</span></div><div class="profile-copy"><strong id="player-name-display">ROOKIE</strong><span id="team-label">FREE AGENT · FINDING TEAM</span></div></div>
+      <div class="coin-row"><div class="coin-icon">₲</div><div><span class="coin-label">GOLD COINS</span><strong id="coin-count">10</strong></div><button id="open-shop" class="plus-button" aria-label="Open skill shop">+</button></div>
+      <div class="panel-separator"></div>
+      <div class="eyebrow stat-title">STRIKER ATTRIBUTES <span>BASELINE</span></div>
+      <div class="stat"><div><span>PACE</span><b id="pace-value">05</b></div><div class="stat-bars" id="pace-bars"></div></div>
+      <div class="stat"><div><span>SHOT POWER</span><b id="power-value">05</b></div><div class="stat-bars" id="power-bars"></div></div>
+      <div class="stat"><div><span>BALL CONTROL</span><b id="control-value">05</b></div><div class="stat-bars" id="control-bars"></div></div>
+      <button id="queue-button" class="queue-button"><span class="queue-icon">⌁</span><span><b>FIND A MATCH</b><small>QUICK PLAY · 3V3 ARENA</small></span><span class="queue-arrow">↗</span></button>
+      <div class="queue-note"><span class="live-pulse"></span><span id="player-count">ARENA OPEN · 1 PLAYER</span></div>
+    </aside>
+
+    <aside class="right-panel">
+      <div class="mini-card glass"><div class="eyebrow">MATCH INTEL <span class="live-badge">LIVE</span></div><p id="match-tip">Control the ball.<br><b>Own the goal.</b></p><div class="mini-divider"></div><div class="intel-row"><span>YOUR ROLE</span><b id="role-label">STRIKER</b></div><div class="intel-row"><span>UNLOCKED SKILLS</span><b id="skill-count">00</b></div></div>
+      <button class="shop-teaser glass" id="shop-teaser"><span class="teaser-icon">✳</span><span><b>SKILL LAB</b><small>Build your signature play</small></span><span class="teaser-arrow">→</span></button>
+      <div class="skill-hints glass"><div class="eyebrow">FIELD MANUAL</div><div class="hint-row"><kbd>W A S D</kbd><span>MOVE</span></div><div class="hint-row"><kbd>SPACE</kbd><span>SHOOT / TACKLE</span></div><div class="hint-row"><kbd>Q</kbd><span>SIGNATURE SKILL</span></div><div class="hint-row"><kbd>SHIFT</kbd><span>SPRINT</span></div></div>
+    </aside>
+
+    <div class="bottom-left"><span class="signal-icon">◉</span><span>LIVE SIMULATION</span><i></i><span id="connection-detail">ESTABLISHING LINK</span></div>
+    <div class="bottom-center"><span class="direction">W</span><span>YOUR EGO. YOUR GAME.</span></div>
+    <div class="bottom-right"><span>V 1.0.0</span><i></i><span>ARENA 01</span></div>
+
+    <div class="mobile-controls" aria-label="Touch controls"><div class="dpad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div><button id="mobile-shoot" class="shoot-touch">SHOOT</button><button id="mobile-skill" class="skill-touch">SKILL</button></div>
+    <div id="toast" class="toast"></div>
+
+    <div id="welcome-modal" class="modal-backdrop"><div class="welcome-card glass"><div class="welcome-kicker"><span>01</span> YOUR EGO STARTS HERE</div><div class="welcome-title">BECOME<br>THE <em>ACE.</em></div><p>Enter the arena. Find your edge. Make every goal yours.</p><form id="welcome-form"><label for="name-input">STRIKER NAME</label><input id="name-input" maxlength="16" placeholder="Rookie" value="Rookie" /><label for="admin-key-input" class="admin-label">ADMIN ACCESS KEY <span>OPTIONAL</span></label><input id="admin-key-input" type="password" placeholder="Leave blank for player access" autocomplete="off"/><button id="enter-button" class="enter-button" type="submit">ENTER THE ARENA <span>↗</span></button></form><div class="welcome-foot"><span>✦ 10 GOLD STARTER BONUS</span><span>ONLINE 3V3</span></div></div></div>
+
+    <div id="shop-modal" class="modal-backdrop hidden"><div class="shop-card glass"><button class="close-modal" id="close-shop">×</button><div class="eyebrow"><span class="eyebrow-line"></span> THE SKILL LAB</div><h2>DEFINE YOUR <em>WEAPON.</em></h2><p class="shop-intro">Unlock a signature anime technique. Each skill costs <b>100 gold</b>.</p><div class="shop-balance"><span>YOUR BALANCE</span><b>₲ <span id="shop-coins">10</span></b></div><div id="skill-list" class="skill-list"></div><div class="shop-foot">Skills recharge after use · Coins are secured server-side</div></div></div>
+
+    <div id="goal-flash" class="goal-flash"><span>GOAL</span><b id="goal-team">RED TEAM</b></div>
+    <div id="security-toast" class="security-toast"></div>
+  </main>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/game.js"></script>
+</body>
+</html>
