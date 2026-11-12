@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101619" />
+  <link rel="icon" href="data:," />
+  <title>BLUE LOCK: EGOIST LEAGUE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Egoist League home"><span class="brand-mark">E</span><span>BLUE LOCK <b>PROJECT</b></span></a>
+      <div class="topbar-right">
+        <div class="coin-pill"><span class="coin-icon">◈</span><span id="coin-count">10</span><small>GOLD</small></div>
+        <button class="icon-button" id="sound-toggle" aria-label="Toggle sound">♫</button>
+        <button class="avatar" id="profile-button" aria-label="Player profile">K</button>
+      </div>
+    </header>
+
+    <section class="screen active" id="home-screen">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> PROJECT BLUE LOCK <span class="eyebrow-line"></span> EGOIST LEAGUE</div>
+          <h1>THE FIELD<br>IS <span>YOURS.</span></h1>
+          <p class="hero-sub">There are no pass-first players here.<br>Become the striker who devours them all.</p>
+          <div class="hero-actions">
+            <button class="primary-button" id="play-button"><span>ENTER THE ARENA</span><b>↗</b></button>
+            <button class="text-button" id="training-button"><span class="play-icon">▶</span> TRAINING MODE</button>
+          </div>
+          <div class="hero-stats">
+            <div><strong>01</strong><small>YOUR EGO</small></div><i></i>
+            <div><strong>4v4</strong><small>SMALL SIDED</small></div><i></i>
+            <div><strong>∞</strong><small>WAYS TO SCORE</small></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Anime striker illustration">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-glow"></div><div class="slash slash-one"></div><div class="slash slash-two"></div>
+          <div class="art-label">EGOIST<br><span>#01</span></div>
+          <svg class="player-art" viewBox="0 0 430 500" role="img" aria-label="Blue-haired striker ready to shoot">
+            <defs>
+              <linearGradient id="jersey" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#f3fcff"/><stop offset=".6" stop-color="#b9e8ee"/><stop offset="1" stop-color="#5ca9bf"/></linearGradient>
+              <linearGradient id="hair" x1="0" x2="1"><stop stop-color="#15325f"/><stop offset=".5" stop-color="#2764a5"/><stop offset="1" stop-color="#101c3b"/></linearGradient>
+              <linearGradient id="skin" x1="0" x2="1"><stop stop-color="#ffe0bd"/><stop offset="1" stop-color="#dc9f7f"/></linearGradient>
+            </defs>
+            <ellipse cx="237" cy="466" rx="125" ry="15" fill="#071214" opacity=".55"/>
+            <path d="M111 470 157 338l75-26 90 60-7 108h-58l-13-86-45 80-53 4 25-97-40 92z" fill="#101f42" stroke="#071222" stroke-width="8"/>
+            <path d="m155 337 8-54 106-10 48 53-32 89-58-43-44 48-49-33z" fill="#111c38"/>
+            <path d="m165 213 99-26 54 88-29 65-73-28-63 35-34-59z" fill="url(#jersey)" stroke="#152c50" stroke-width="7"/>
+            <path d="m166 225-51 26-31 93 29 22 55-72M302 229l47 24 31 88-26 23-58-70" fill="#d5f3f5" stroke="#152c50" stroke-width="8" stroke-linejoin="round"/>
+            <path d="m216 272 37-13 13 70-27 21-27-26z" fill="#152a4d"/><path d="m185 283-20 62 25 15 37-42-10-37z" fill="#1f66a1"/>
+            <path d="m196 107 85 1 36 61-20 79-54 43-66-34-22-77z" fill="url(#skin)" stroke="#101c38" stroke-width="7"/>
+            <path d="m154 155 18-96 61-36 86 31 31 83-42-23-20-42-26 33-37-23-30 47-31 23-2 42-22 12-12-55z" fill="url(#hair)" stroke="#0b1730" stroke-width="8" stroke-linejoin="round"/>
+            <path d="m179 140 38-41 27 8 8 31M275 133l25-31 27 35" fill="none" stroke="#91d8ee" stroke-width="7" stroke-linecap="round"/>
+            <path d="m191 160 31-8-3 10-28 7M271 157l30-7-3 10-25 7" fill="#fff"/><path d="m204 162 12-2-2 6-10 3M284 159l11-2-2 7-10 2" fill="#16a6d8"/>
+            <path d="m228 213 25 5-12 9" fill="none" stroke="#924f4c" stroke-width="4" stroke-linecap="round"/><path d="m218 230 29 3" fill="none" stroke="#8d4849" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="369" cy="433" r="34" fill="#f5f4e9" stroke="#101b2c" stroke-width="7"/><path d="m369 414 13 9-5 15h-16l-5-15z" fill="#192744"/><path d="m369 399v15m-33 9 10 5m47-5 9-8m-33 47 1-15m-29 3 10-12" stroke="#192744" stroke-width="6"/>
+          </svg>
+          <div class="hero-quote"><span>“</span> I’LL DEVOUR<br>EVERYONE.</div>
+          <div class="vertical-word">STRIKER DEVELOPMENT PROGRAM</div>
+        </div>
+      </div>
+      <div class="bottom-ribbon"><span>01 / 11</span><div class="ribbon-track"><i></i></div><span>AWAKEN YOUR EGO</span><span class="ribbon-right">SCROLL TO DOMINATE ↓</span></div>
+      <div class="home-lower">
+        <button class="feature-card" id="shop-button"><span class="feature-num">01</span><span class="feature-icon">✦</span><span><b>EGOIST SHOP</b><small>Equip your signature weapon</small></span><i>↗</i></button>
+        <div class="profile-card"><div class="profile-top"><span>YOUR PLAYER</span><span class="rank-tag">RANK <b>E</b></span></div><div class="profile-main"><div class="profile-avatar">K</div><div><h3>KAITO <span>ISAGI</span></h3><div class="xp-track"><i></i></div><small>LEVEL 01 <em>· 120 / 500 XP</em></small></div></div></div>
+        <button class="feature-card admin-card" id="admin-open"><span class="feature-num">02</span><span class="feature-icon">⌘</span><span><b>ADMIN ACCESS</b><small>Restricted personnel only</small></span><i>↗</i></button>
+      </div>
+    </section>
+
+    <section class="screen" id="lobby-screen">
+      <div class="section-heading"><button class="back-button" data-back="home-screen">← BACK</button><div class="eyebrow">EGOIST LEAGUE <span class="eyebrow-line"></span> QUICK MATCH</div></div>
+      <div class="lobby-layout">
+        <div class="lobby-main">
+          <div class="lobby-title"><span class="section-index">01</span><h2>FIND YOUR<br><span>RIVALS.</span></h2><p>Assemble your ego. The pitch is waiting.</p></div>
+          <div class="match-card"><div class="match-card-top"><div><span class="live-dot"></span> SOLO QUEUE <span class="queue-tag">BOT MATCH</span></div><span>EST. WAIT <b>00:08</b></span></div>
+            <div class="match-versus"><div class="team-mark blue-team"><b>BL</b><small>BLUE LOCK XI</small></div><div class="versus">VS<span>4v4</span></div><div class="team-mark red-team"><b>R</b><small>RIVAL SQUAD</small></div></div>
+            <div class="match-info"><span>⌖ &nbsp; TRAINING FACILITY 02</span><span>◷ &nbsp; 5 MIN MATCH</span><span>⚡ &nbsp; CASUAL</span></div>
+            <button class="primary-button queue-button" id="queue-button"><span>START MATCHMAKING</span><b>↗</b></button>
+          </div>
+          <div class="lobby-tip"><span>✦</span><p><b>FIELD INTEL</b> — Score more goals than the rival team before the timer runs out. Skills are your edge. Use them wisely.</p></div>
+        </div>
+        <aside class="lobby-side"><div class="side-heading">SQUAD STATUS <span>03 / 04</span></div><div class="squad-row"><div class="squad-avatar me">K</div><span><b>KAITO ISAGI</b><small>YOU · STRIKER</small></span><span class="ready">READY</span></div><div class="squad-row"><div class="squad-avatar">R</div><span><b>REN KUNIGAMI</b><small>BOT · FORWARD</small></span><span class="ready">READY</span></div><div class="squad-row"><div class="squad-avatar">C</div><span><b>CHIGIRI H.</b><small>BOT · WINGER</small></span><span class="ready">READY</span></div><div class="squad-row open-slot"><div class="squad-avatar">+</div><span><b>OPEN SLOT</b><small>BOT FILL ENABLED</small></span><span class="ready">AUTO</span></div><div class="side-footer"><span class="ping"><i></i> SIMULATED SERVER</span><span>12 MS</span></div></aside>
+      </div>
+    </section>
+
+    <section class="screen" id="shop-screen">
+      <div class="section-heading"><button class="back-button" data-back="home-screen">← BACK</button><div class="eyebrow">EGOIST LEAGUE <span class="eyebrow-line"></span> WEAPON SHOP</div></div>
+      <div class="shop-heading"><div><span class="section-index">02</span><h2>CHOOSE YOUR<br><span>WEAPON.</span></h2></div><p>Turn your ego into a weapon.<br>Each skill costs <b>100 gold</b>.</p></div>
+      <div class="skill-grid" id="skill-grid"></div>
+      <div class="shop-note"><span>◈</span> You have <b id="shop-coins">10 GOLD</b> · Win matches to earn more coins.</div>
+    </section>
+
+    <section class="screen" id="match-screen">
+      <div class="match-hud"><div class="hud-team"><span class="hud-emblem">BL</span><span>BLUE LOCK<small>YOUR SQUAD</small></span></div><div class="scoreboard"><span class="score-blue" id="score-blue">0</span><span class="score-divider">:</span><span class="score-red" id="score-red">0</span><div class="match-clock" id="match-clock">05:00</div></div><div class="hud-team enemy"><span>RIVAL SQUAD<small>AI OPPONENTS</small></span><span class="hud-emblem red-emblem">R</span></div><button class="pause-button" id="pause-button">Ⅱ</button></div>
+      <div class="pitch-wrap"><canvas id="game-canvas" aria-label="Soccer match field"></canvas>
+        <div class="match-toast" id="match-toast">MATCH START</div>
+        <div class="touch-controls"><div class="joystick-zone"><div class="joystick-base" id="joystick-base"><div class="joystick-knob" id="joystick-knob"></div></div><span>MOVE</span></div>
+          <div class="action-controls"><button class="action-btn sprint-btn" data-action="sprint"><span>»</span><small>SPRINT</small></button><button class="action-btn pass-btn" data-action="pass"><span>➤</span><small>PASS</small></button><button class="action-btn shoot-btn" data-action="shoot"><span>⚽</span><small>SHOOT</small></button><button class="action-btn tackle-btn" data-action="tackle"><span>✦</span><small>TACKLE</small></button><button class="action-btn special-btn" data-action="special"><span>✧</span><small>SPECIAL</small></button></div>
+        </div>
+      </div>
+      <div class="match-footer"><span>WASD / ARROWS TO MOVE</span><span>SPACE SHOOT · E PASS · SHIFT SPRINT · Q SPECIAL</span><button id="quit-match">FORFEIT MATCH ↗</button></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="admin-modal"><div class="modal admin-modal"><button class="modal-close" data-close>×</button><div class="modal-kicker">RESTRICTED ACCESS · PERSONNEL ONLY</div><div class="admin-symbol">⌘</div><h2>ADMIN <span>OVERRIDE</span></h2><p>Authorized access grants max stats, all weapons, and unlimited gold.</p><form id="admin-form"><label for="admin-password">ACCESS KEY</label><input id="admin-password" type="password" placeholder="Enter administrator key" autocomplete="off"/><div class="form-error" id="admin-error"></div><button class="primary-button" type="submit"><span>AUTHORIZE</span><b>↗</b></button></form><small class="local-note">LOCAL DEMO · Admin access applies to this session</small></div></div>
+  <div class="modal-backdrop" id="pause-modal"><div class="modal pause-modal"><button class="modal-close" data-close>×</button><div class="modal-kicker">MATCH PAUSED</div><h2>TAKE A <span>BREATH.</span></h2><p>Your opponents are frozen. Ready to get back out there?</p><button class="primary-button" id="resume-button"><span>RESUME MATCH</span><b>↗</b></button><button class="text-button" id="pause-quit">FORFEIT MATCH</button></div></div>
+  <div class="modal-backdrop" id="result-modal"><div class="modal result-modal"><div class="modal-kicker">FINAL WHISTLE · MATCH COMPLETE</div><div class="result-stamp" id="result-stamp">VICTORY</div><div class="result-score"><span id="final-blue">0</span><i>:</i><span id="final-red">0</span></div><p id="result-copy">A striker's instinct. You devoured the field.</p><div class="reward-chip">◈ &nbsp; <b id="reward-amount">+25 GOLD</b></div><button class="primary-button" id="result-home"><span>RETURN TO BASE</span><b>↗</b></button></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="game.js"></script>
+</body>
+</html>
