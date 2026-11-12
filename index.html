@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#07111d" />
+    <meta name="description" content="Striker Protocol — an anime-inspired 3D football arena. Find your flow." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307111d'/%3E%3Cpath d='M44 16H26a10 10 0 0 0 0 20h12a4 4 0 0 1 0 8H18' fill='none' stroke='%2376f6ea' stroke-width='7' stroke-linecap='square'/%3E%3C/svg%3E" />
+    <title>STRIKER PROTOCOL — Ego is the weapon</title>
+  </head>
+  <body>
+    <div id="game-root">
+      <canvas id="game-canvas" aria-label="3D soccer arena"></canvas>
+      <div class="vignette"></div>
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Striker Protocol home"><span class="brand-mark">S</span><span>STRIKER<span class="brand-muted">/</span>PROTOCOL</span></a>
+        <div class="top-actions">
+          <button class="icon-btn" id="sound-toggle" aria-label="Toggle sound">♫</button>
+          <button class="profile-chip" id="profile-open"><span class="avatar-mini">K</span><span><b id="player-name">KAI</b><small>STRIKER · LV 01</small></span><i class="status-dot"></i></button>
+        </div>
+      </header>
+
+      <main id="home-screen" class="home-screen">
+        <section class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> PROJECT: WORLD CUP <span class="eyebrow-dot"></span> SEASON 01</div>
+          <h1>YOUR EGO.<br /><span>YOUR</span> GOAL.</h1>
+          <p>There are no teamwork rules in the box.<br class="desktop-break" /> Become the striker the world can't ignore.</p>
+          <div class="hero-buttons">
+            <button id="play-button" class="primary-btn"><span>ENTER THE PITCH</span><b>↗</b></button>
+            <button id="training-button" class="secondary-btn"><span class="play-icon">▶</span> FREE TRAINING</button>
+          </div>
+          <div class="season-note"><span class="season-icon">✳</span> <span>THE NEW GENERATION<br /><b>IS ALREADY HERE.</b></span></div>
+        </section>
+        <div class="home-bottom">
+          <div class="mode-card"><span class="mode-icon">◉</span><span><b>QUICK MATCH</b><small>1V1 · AI RIVAL</small></span><span class="live-dot"></span></div>
+          <div class="latency"><span class="pulse-bars"><i></i><i></i><i></i></span><span>REGION: AUTO</span><b>24 <small>MS</small></b></div>
+          <div class="version-label">SP // 001.04<br />EGO IS THE WEAPON</div>
+        </div>
+      </main>
+
+      <aside class="side-rail" aria-label="Game menu">
+        <button class="rail-button active" id="home-nav" title="Home"><span>⌂</span><small>HOME</small></button>
+        <button class="rail-button" id="shop-open" title="Skill shop"><span>✦</span><small>SKILLS</small><i class="rail-badge"></i></button>
+        <button class="rail-button" id="locker-open" title="Locker"><span>◈</span><small>LOCKER</small></button>
+      </aside>
+
+      <section id="matchmaking" class="overlay hidden" aria-modal="true" role="dialog">
+        <div class="match-card">
+          <button class="close-btn" data-close="matchmaking" aria-label="Close">×</button>
+          <div class="eyebrow">SIMULATED MATCHMAKING <span class="live-dot"></span></div>
+          <div class="search-orbit"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><span>⚽</span></div>
+          <h2 id="queue-title">FINDING YOUR RIVAL</h2>
+          <p id="queue-status">Searching nearby strikers · estimated 00:24</p>
+          <div class="queue-meta"><span>MODE <b>1V1 QUICK MATCH</b></span><span>REGION <b>AUTO · 24 MS</b></span></div>
+          <button class="secondary-btn cancel-queue" id="cancel-queue">CANCEL SEARCH</button>
+        </div>
+      </section>
+
+      <section id="shop-modal" class="overlay hidden" aria-modal="true" role="dialog">
+        <div class="panel-card shop-card">
+          <button class="close-btn" data-close="shop-modal" aria-label="Close">×</button>
+          <div class="panel-heading"><div><div class="eyebrow">BUILD YOUR WEAPON</div><h2>SKILL <span>ARSENAL</span></h2></div><div class="wallet"><span>◉</span><b id="shop-coins">10</b><small>G</small></div></div>
+          <p class="panel-intro">Unlock a signature skill. Skills are yours for every match.</p>
+          <div class="skill-grid" id="skill-grid"></div>
+          <div class="panel-foot"><span>✳ Earn gold from goals and match wins</span><span>SKILLS COST <b>100 G</b></span></div>
+        </div>
+      </section>
+
+      <section id="locker-modal" class="overlay hidden" aria-modal="true" role="dialog">
+        <div class="panel-card locker-card">
+          <button class="close-btn" data-close="locker-modal" aria-label="Close">×</button>
+          <div class="eyebrow">PLAYER PROFILE · SEASON 01</div>
+          <h2>STRIKER <span>LOCKER</span></h2>
+          <div class="profile-stats"><div><small>GOLD</small><b><span id="locker-coins">10</span> <i>G</i></b></div><div><small>GOALS</small><b id="locker-goals">0</b></div><div><small>SKILLS</small><b id="locker-skills">0 / 4</b></div><div><small>REPUTATION</small><b>ROOKIE</b></div></div>
+          <div class="locker-skills"><small>UNLOCKED ABILITIES</small><div id="owned-skills" class="owned-skills"></div></div>
+          <div class="security-note"><span>◈</span><span><b>LOCAL DEMO PROFILE</b><small>Progress is stored on this device. Secure multiplayer needs a server.</small></span><i class="secure-dot"></i></div>
+        </div>
+      </section>
+
+      <section id="match-screen" class="match-screen hidden">
+        <div class="match-top"><div class="match-label"><span class="live-dot"></span> QUICK MATCH <small>· RIVAL FOUND</small></div><div class="scoreboard"><div class="team-score"><i class="blue-swatch"></i> YOU <b id="score-you">0</b></div><div class="clock" id="match-clock">02:00</div><div class="team-score enemy"><b id="score-rival">0</b> <i class="red-swatch"></i> RIVAL</div></div><button id="pause-button" class="pause-button" aria-label="Pause match">Ⅱ</button></div>
+        <div class="objective" id="objective"><span>OBJECTIVE</span><b>SCORE THE NEXT GOAL</b><i>⌖</i></div>
+        <div class="match-bottom-left"><div class="player-readout"><span class="readout-avatar">K</span><span><b>KAI</b><small>FORWARD · LV 01</small></span></div><div class="stamina-block"><div class="meter-label"><span>STAMINA</span><b id="stamina-value">100%</b></div><div class="meter"><i id="stamina-meter"></i></div></div><div class="flow-block"><div class="meter-label"><span>FLOW</span><b id="flow-value">0%</b></div><div class="meter flow-meter"><i id="flow-meter"></i></div></div></div>
+        <div class="match-bottom-right"><div class="controls-hint"><span>WASD</span> MOVE <span>SHIFT</span> SPRINT <span>SPACE</span> SHOOT</div><div class="mobile-actions"><button class="action-btn" data-action="sprint"><span>↯</span><small>SPRINT</small></button><button class="action-btn" data-action="pass"><span>➤</span><small>PASS</small></button><button class="action-btn shoot-action" data-action="shoot"><span>◎</span><small>SHOOT</small></button><button class="action-btn" data-action="tackle"><span>◒</span><small>TACKLE</small></button><button class="action-btn special-action" data-action="special"><span>✦</span><small>SPECIAL</small></button></div></div>
+        <div id="joystick" class="joystick"><div class="stick-ring"><div id="stick-knob" class="stick-knob"></div></div><small>MOVE</small></div>
+        <div class="toast" id="game-toast"></div>
+        <div id="pause-modal" class="overlay hidden"><div class="pause-card"><div class="eyebrow">MATCH PAUSED</div><h2>TAKE A BREATH.</h2><button class="primary-btn" id="resume-button"><span>BACK TO MATCH</span><b>↗</b></button><button class="secondary-btn" id="quit-button">FORFEIT MATCH</button></div></div>
+        <div id="result-modal" class="overlay hidden"><div class="pause-card result-card"><div class="eyebrow">FULL TIME</div><h2 id="result-title">MATCH COMPLETE</h2><p id="result-copy">Your next goal is waiting.</p><div class="reward-line">REWARD <b id="result-reward">+25 G</b></div><button class="primary-btn" id="result-home"><span>RETURN TO BASE</span><b>↗</b></button></div></div>
+      </section>
+      <div id="rotate-hint" class="rotate-hint"><span>⤾</span> ROTATE YOUR DEVICE FOR THE FULL PITCH</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
